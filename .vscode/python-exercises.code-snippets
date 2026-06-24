@@ -1,0 +1,45 @@
+{
+    "Plantilla ejercicio Python": {
+        "scope": "python",
+        "prefix": "ejercicio",
+        "body": [
+            "\"\"\"",
+            "Ejercicio ${1:XX} - ${2:Título del ejercicio}",
+            "",
+            "Enunciado:",
+            "${3:Describe aquí el enunciado del ejercicio.}",
+            "",
+            "Conceptos practicados:",
+            "- ${4:Concepto 1}",
+            "- ${5:Concepto 2}",
+            "- ${6:Concepto 3}",
+            "",
+            "Notas:",
+            "${7:Añade aquí notas, errores detectados o aclaraciones.}",
+            "\"\"\"",
+            "",
+            "# Solución",
+            "$0"
+        ],
+        "description": "Crea la estructura base para documentar y resolver un ejercicio de Python"
+    },
+    "Plantilla ejercicio Python corta": {
+        "scope": "python",
+        "prefix": "ejcorto",
+        "body": [
+            "\"\"\"",
+            "Ejercicio ${1:XX} - ${2:Título del ejercicio}",
+            "",
+            "Enunciado:",
+            "${3:Describe aquí el enunciado del ejercicio.}",
+            "",
+            "Notas:",
+            "${4:Añade aquí una nota breve si hace falta.}",
+            "\"\"\"",
+            "",
+            "# Solución",
+            "$0"
+        ],
+        "description": "Crea una plantilla corta para ejercicios simples de Python"
+    }
+}
