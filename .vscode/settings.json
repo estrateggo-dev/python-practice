@@ -11,6 +11,9 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "ruff.enable": true,
     "files.exclude": {
         "**/__pycache__": true,

@@ -4,9 +4,9 @@ Repositorio personal para practicar Python mediante ejercicios organizados por b
 
 El objetivo principal es aprender Python escribiendo código real, manteniendo una estructura clara y usando herramientas básicas de desarrollo como `uv`, `ruff`, `black` y Git.
 
----
 
-## Objetivos del proyecto
+
+## 1. Objetivos del proyecto
 
 - Practicar Python de forma progresiva.
 - Resolver cada ejercicio en un archivo `.py` independiente.
@@ -16,9 +16,9 @@ El objetivo principal es aprender Python escribiendo código real, manteniendo u
 - Revisar el código con `ruff`.
 - Mantener historial del aprendizaje con Git.
 
----
 
-## Estructura del proyecto
+
+## 2. Estructura del proyecto
 
 ```text
 python-practice/
@@ -41,9 +41,9 @@ python-practice/
 └── .python-version
 ```
 
----
 
-## Carpetas principales
+
+## 3. Carpetas principales
 
 ### `exercises/`
 
@@ -65,7 +65,7 @@ exercises/
         └── ejercicio_02_datos_usuario.py
 ```
 
----
+
 
 ### `playground/`
 
@@ -80,7 +80,7 @@ playground/
 └── pruebas.py
 ```
 
----
+
 
 ### `.vscode/`
 
@@ -95,9 +95,9 @@ Incluye:
 
 El archivo de snippets permite crear rápidamente una plantilla base para cada ejercicio.
 
----
 
-## Entorno virtual
+
+## 4. Entorno virtual
 
 El proyecto usa `uv` para gestionar el entorno virtual y las dependencias.
 
@@ -109,9 +109,85 @@ El entorno virtual está en:
 
 Esta carpeta no se sube a GitHub.
 
----
 
-## Versión de Python
+## 5. Archivos de configuración de `uv`
+
+### `pyproject.toml`
+
+El archivo `pyproject.toml` define la configuración principal del proyecto Python.
+
+En este proyecto se usa para declarar:
+
+- el nombre del proyecto;
+- la versión;
+- la versión mínima de Python;
+- las dependencias normales;
+- las dependencias de desarrollo.
+
+Ejemplo de dependencia de desarrollo:
+
+```toml
+[dependency-groups]
+dev = [
+    "black",
+    "ruff",
+]
+```
+
+Este archivo responde a la pregunta:
+
+```text
+¿Qué necesita el proyecto?
+```
+
+
+
+### `uv.lock`
+
+El archivo `uv.lock` guarda las versiones exactas de todos los paquetes resueltos por `uv`.
+
+Incluye:
+
+- dependencias directas;
+- dependencias indirectas;
+- versiones exactas;
+- metadatos necesarios para reproducir el entorno.
+
+Ejemplo:
+
+```text
+black == 26.5.1
+ruff == 0.15.19
+click == 8.4.2
+```
+
+Este archivo responde a la pregunta:
+
+```text
+¿Qué versiones exactas se están usando?
+```
+
+
+
+### Diferencia rápida
+
+| Archivo | Función |
+|---|---|
+| `pyproject.toml` | Declara qué paquetes necesita el proyecto |
+| `uv.lock` | Fija las versiones exactas instaladas |
+| `.venv/` | Contiene el entorno virtual local |
+
+`pyproject.toml` y `uv.lock` sí deben subirse a GitHub.
+
+La carpeta `.venv/` no debe subirse, porque se puede reconstruir ejecutando:
+
+```bash
+uv sync
+```
+
+
+
+## 6. Versión de Python
 
 Actualmente el proyecto usa:
 
@@ -131,9 +207,9 @@ O, si el entorno virtual está activo:
 python --version
 ```
 
----
 
-## Dependencias instaladas
+
+## 7. Dependencias instaladas
 
 Dependencias directas de desarrollo:
 
@@ -144,9 +220,9 @@ ruff
 
 Estas dependencias están declaradas en `pyproject.toml`.
 
----
 
-## Dependencias indirectas actuales
+
+## 8. Dependencias indirectas actuales
 
 Al instalar `black` y `ruff`, también se instalan algunas dependencias necesarias para que funcionen:
 
@@ -168,9 +244,9 @@ Se pueden consultar con:
 uv pip list
 ```
 
----
 
-## Diferencia entre dependencias normales y de desarrollo
+
+## 9. Diferencia entre dependencias normales y de desarrollo
 
 Las dependencias normales son necesarias para que el programa funcione.
 
@@ -190,9 +266,9 @@ uv add --dev ruff black
 
 En este proyecto, `ruff` y `black` son dependencias de desarrollo.
 
----
 
-## Comandos básicos del proyecto
+
+## 10. Comandos básicos del proyecto
 
 ### Ver versión de Python
 
@@ -200,7 +276,7 @@ En este proyecto, `ruff` y `black` son dependencias de desarrollo.
 uv run python --version
 ```
 
----
+
 
 ### Ver el ejecutable de Python usado
 
@@ -214,7 +290,7 @@ Debe apuntar a algo similar a:
 D:\python-practice\.venv\Scripts\python.exe
 ```
 
----
+
 
 ### Ver paquetes instalados
 
@@ -222,7 +298,7 @@ D:\python-practice\.venv\Scripts\python.exe
 uv pip list
 ```
 
----
+
 
 ### Ver árbol de dependencias
 
@@ -230,7 +306,7 @@ uv pip list
 uv tree
 ```
 
----
+
 
 ### Ver paquetes desactualizados
 
@@ -244,7 +320,7 @@ O de forma más resumida:
 uv tree --outdated --depth=1
 ```
 
----
+
 
 ### Ejecutar Ruff
 
@@ -260,7 +336,7 @@ Revisar un archivo concreto:
 uv run ruff check exercises/bloque_01_fundamentos/leccion_01_print_input/ejercicio_01_saludo.py
 ```
 
----
+
 
 ### Ejecutar Black
 
@@ -276,7 +352,7 @@ Formatear un archivo concreto:
 uv run black exercises/bloque_01_fundamentos/leccion_01_print_input/ejercicio_01_saludo.py
 ```
 
----
+
 
 ### Ejecutar un ejercicio
 
@@ -292,9 +368,9 @@ Si el entorno virtual está activo, también se puede ejecutar así:
 python exercises/bloque_01_fundamentos/leccion_01_print_input/ejercicio_01_saludo.py
 ```
 
----
 
-## Activar el entorno virtual manualmente
+
+## 11. Activar el entorno virtual manualmente
 
 No es obligatorio si se usa `uv run`.
 
@@ -316,9 +392,9 @@ Cuando el entorno esté activo, la terminal mostrará algo parecido a:
 (python-practice)
 ```
 
----
 
-## Actualizar dependencias
+
+## 12. Actualizar dependencias
 
 ### Ver primero qué paquetes están desactualizados
 
@@ -326,7 +402,7 @@ Cuando el entorno esté activo, la terminal mostrará algo parecido a:
 uv tree --outdated --depth=1
 ```
 
----
+
 
 ### Actualizar todas las dependencias
 
@@ -335,7 +411,7 @@ uv lock --upgrade
 uv sync
 ```
 
----
+
 
 ### Actualizar una dependencia concreta
 
@@ -351,9 +427,9 @@ Ejemplo con `black`:
 uv add --dev black --upgrade-package black
 ```
 
----
 
-## Snippets de ejercicios
+
+## 13. Snippets de ejercicios
 
 El proyecto incluye snippets locales en:
 
@@ -394,7 +470,7 @@ Añade aquí notas, errores detectados o aclaraciones.
 # Solución
 ```
 
----
+
 
 ### Snippet corto
 
@@ -406,9 +482,9 @@ ejcorto
 
 Genera una versión más simple para ejercicios pequeños.
 
----
 
-## Convención para ejercicios
+
+## 14. Convención para ejercicios
 
 Cada archivo debe seguir esta estructura general:
 
@@ -456,9 +532,9 @@ nombre = input("Introduce tu nombre: ")
 print(f"Hola, {nombre}")
 ```
 
----
 
-## Flujo de trabajo recomendado
+
+## 15. Flujo de trabajo recomendado
 
 1. Crear un archivo `.py` por ejercicio.
 2. Insertar la plantilla con el snippet `ejercicio` o `ejcorto`.
@@ -469,9 +545,9 @@ print(f"Hola, {nombre}")
 7. Formatear con `black`.
 8. Hacer commit con Git.
 
----
 
-## Comandos de Git habituales
+
+## 16. Comandos de Git habituales
 
 Ver estado del repo:
 
@@ -497,9 +573,9 @@ Ver historial:
 git log --oneline
 ```
 
----
 
-## Archivos que no se suben al repo
+
+## 17. Archivos que no se suben al repo
 
 El archivo `.gitignore` excluye:
 
@@ -516,9 +592,9 @@ __pycache__/
 
 El archivo `uv.lock` sí debe subirse al repo.
 
----
 
-## Estado actual del proyecto
+
+## 18. Estado actual del proyecto
 
 - Proyecto inicializado con `uv`.
 - Entorno virtual creado en `.venv/`.
@@ -528,9 +604,9 @@ El archivo `uv.lock` sí debe subirse al repo.
 - Snippets locales configurados para ejercicios.
 - Configuración local de VS Code preparada.
 
----
 
-## Próximos pasos
+
+## 19. Próximos pasos
 
 - Crear el primer ejercicio en `exercises/bloque_01_fundamentos/leccion_01_print_input/`.
 - Probar el snippet `ejercicio`.
