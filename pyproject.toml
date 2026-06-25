@@ -11,3 +11,10 @@ dev = [
     "black>=26.5.1",
     "ruff>=0.15.19",
 ]
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
