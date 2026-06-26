@@ -203,3 +203,26 @@ nombre_user = input("\nCúal es tu nombre: ")
 print(f"{"*" * len(nombre_user)}\n")
 print(f"{nombre_user}\n")
 print(f"{"*" * len(nombre_user)}\n")
+
+"""
+Ejercicio 09 - nivel avanzado
+
+Enunciado:
+Vamos a ver como se puede alinear texto a diferentes posiciones mediante
+formateo avanzado
+
+Conceptos practicados:
+- f-strings
+- formateo
+
+
+Notas:
+Añade aquí notas, errores detectados o aclaraciones.
+"""
+
+# Solución
+user = input("Introduzca su nombre: ")
+
+print(f"{user:>10}")
+print(f"{user:<10}")
+print(f"{user:^10}")
