@@ -163,8 +163,8 @@ Este archivo responde a la pregunta:
 
 ### Diferencia rápida
 
-| Archivo          | Función                                   |
-| ---------------- | ----------------------------------------- |
+| Archivo        | Función                                   |
+|----------------|-------------------------------------------|
 | `pyproject.toml` | Declara qué paquetes necesita el proyecto |
 | `uv.lock`        | Fija las versiones exactas instaladas     |
 | `.venv/`         | Contiene el entorno virtual local         |

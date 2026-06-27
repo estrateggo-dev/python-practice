@@ -62,3 +62,20 @@ print(0 < 3)
 # Para comprobar si una función ha encontrado algo
 print(type(None))
 print(None)
+
+# Función type(): devuelve el tipo de objeto al que apunta la variable,
+# Veamos algunos ejemplos:
+#
+# print(type(42)) -> <class 'int'>
+# print(type(3.15)) -> <class 'float'>
+# print(type("Hola")) -> <class 'str'>
+# print(type(True)) -> <class 'bool'>
+# print(type(None)) -> <class 'NoneType'>
+
+# Función isinstance(): sirve para comprobar si una variable es de un tipo concreto
+# Veamos algunos ejemplos:
+x = 42
+
+print(isinstance(x, int))  # True
+print(isinstance(x, float))  # False
+print(isinstance(x, (int, float)))  # True
